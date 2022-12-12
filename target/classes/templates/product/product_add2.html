@@ -41,7 +41,10 @@
                 async: false,
                 type: "POST",
                 url: "/api/product/2",
-                data: product,
+
+                contentType: "application/json",
+                data: JSON.stringify(product),
+
                 dataType: "text",
                 success: response => {
                     alert(response);
