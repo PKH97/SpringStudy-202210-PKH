@@ -9,6 +9,7 @@
         insert into user_mst
         values(0, #{username}, #{password}, #{name}, #{email})
 <!-- insert 는 응답의 성공한 횟수 -->
+<!--  -->
     </insert>
 
     <select id="findUserByUserId" parameterType="integer" resultType="com.study.springboot202210PKH.web.dto.UserDto">
