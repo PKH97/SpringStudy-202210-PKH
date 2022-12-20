@@ -35,6 +35,7 @@ public class DBTestController {
     public ResponseEntity<?> getUser(@PathVariable int userId){
         UserDto userDto = userService.getUser(userId);
         return ResponseEntity.ok().body(userDto);
+
     }
 
 }
