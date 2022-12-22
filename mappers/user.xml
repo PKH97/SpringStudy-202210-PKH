@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot202210PKH.repository.UserRepository">
+    <insert id="saveUser" parameterType="com.study.springboot202210PKH.web.dto.UserDto"
+    useGeneratedKeys="true" keyProperty="userId">
+<!-- insert id 명은 해당 mapper 안의 메소드 명과 같아야 한다. -->
+        insert into user_mst
+        values(0, #{username}, #{password}, #{name}, #{email})
+<!-- insert 는 응답의 성공한 횟수 -->
+    </insert>
+
+    <select id="findUserByUserId" parameterType="integer" resultType="com.study.springboot202210PKH.web.dto.UserDto">
+        select
+            user_id as userId,
+            username,
+            password,
+            name,
+            email
+        from
+            user_mst
+        where
+            user_id = #{userId}
+    </select>
+</mapper>

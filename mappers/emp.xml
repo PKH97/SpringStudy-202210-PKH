@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot202210PKH.repository.EmployeeRepository">
+    <insert id="saveEmployee" parameterType="com.study.springboot202210PKH.web.dto.EmpDto"
+            useGeneratedKeys="true" keyProperty="empId">
+        insert into emp_mst
+        values(0, #{empName}, #{empAge}, #{empPhone})
+    </insert>
+</mapper>
+
+<!--
+<내가 만든것>
+<insert id="saveEmployee" parameterType="com.study.springboot202210PKH.web.dto.EmpDto"
+            useGeneratedKeys="true" keyProperty="empId">
+        insert into emp_mst(emp_id, emp_name, emp_age, emp_phone)
+        values(0, #{empName}, #{empAge}, #{empPhone})
+    </insert>
+    <select id="getEmployee" resultType="com.study.springboot202210PKH.web.dto.EmpDto">
+        select
+            emp_id as empId,
+            emp_name as empName,
+            emp_age as empAge,
+            emp_phone as empPhone
+        from
+            emp_mst
+    </select>
+-->
