@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const test = () => {
+            alert("테스트 호출!!!");
+        }
+
+        const abc = test;
+
+        test(); // -> 밖에서 정의된 함수를 호출해야만 작동된다.
+        abc();
+    </script>
+</body>
+</html>
