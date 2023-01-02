@@ -3,6 +3,7 @@ package com.study.springboot202210PKH.service;
 import com.study.springboot202210PKH.repository.UserRepository;
 import com.study.springboot202210PKH.web.dto.UserDto;
 import com.study.springboot202210PKH.web.exception.CustomDuplicateUsernameException;
+import com.study.springboot202210PKH.web.exception.CustomValidException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +36,7 @@ public class UserService {
         if(userDto != null){
             Map<String, String> errorMap = new HashMap<>();
             errorMap.put("username", "이미 존재하는 사용자이름 입니다.");
-            throw new CustomDuplicateUsernameException("Duplicate username!!", errorMap);
+            throw new CustomValidException(errorMap);
         }
     }
 }
